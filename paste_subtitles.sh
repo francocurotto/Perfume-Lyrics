@@ -14,7 +14,7 @@ for d in "$DLDIR"/*; do
     BASENAME=$(basename "$d")
     # get video path
     INPATH="$d/$BASENAME.mp4"
-    # get subtitle paths
+    # get subtitles paths
     SUBJAPATH="$d/$BASENAME.ja.vtt"
     SUBRJPATH="$d/$BASENAME.en-GB.vtt"
     SUBENPATH="$d/$BASENAME.en.vtt"
