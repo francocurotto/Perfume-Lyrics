@@ -3,7 +3,7 @@
 # CONSTANTS
 DLDIR="downloaded"
 SUBDIR="subtitled"
-FONTSIZE="30"
+FONTSIZE="28"
 
 # create subtitbled directory
 mkdir -p "$SUBDIR"
@@ -29,7 +29,7 @@ for d in "$DLDIR"/*; do
     ffmpeg  -y -i "$OUTJAPATH" -vf "subtitles=$SUBRJPATH:force_style='Fontsize=$FONTSIZE,Alignment=10,OutlineColour=&H80000000,BorderStyle=3,Outline=1,Shadow=0,MarginV=20'" "$OUTRJPATH" 
     ffmpeg  -y -i "$OUTRJPATH" -vf "subtitles=$SUBENPATH:force_style='Fontsize=$FONTSIZE,Alignment=2, OutlineColour=&H80000000,BorderStyle=3,Outline=1,Shadow=0,MarginV=20'"  "$OUTPATH" 
     # remove intermediate files
-    rm "$SUBDIR/$BASENAME-ja.mp4"
-    rm "$SUBDIR/$BASENAME-rj.mp4"
+    #rm "$OUTJAPATH"
+    #rm "$OUTRJPATH"
 done
 

@@ -18,5 +18,5 @@ for d in "$DLDIR"/*; do
     sed -i "s/！/! /g" "$SUBJAPATH"
     ### clean english subtitles
     # remove non-ascii character from english
-    perl -i -nle 'print if m{^[[:ascii:]]+$}' "$SUBENPATH"
+    perl -i -ne 'print if m{^[[:ascii:]]+$}' "$SUBENPATH"
 done
