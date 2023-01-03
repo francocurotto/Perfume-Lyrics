@@ -29,7 +29,7 @@ for d in "$DLDIR"/*; do
     ffmpeg  -y -i "$OUTJAPATH" -vf "subtitles=$SUBRJPATH:force_style='Fontsize=$FONTSIZE,Alignment=10,OutlineColour=&H80000000,BorderStyle=4,BackColour=&H80000000,Outline=0,Shadow=0" "$OUTRJPATH" 
     ffmpeg  -y -i "$OUTRJPATH" -vf "subtitles=$SUBENPATH:force_style='Fontsize=$FONTSIZE,Alignment=2, OutlineColour=&H80000000,BorderStyle=4,BackColour=&H80000000,Outline=0,Shadow=0" "$OUTPATH" 
     # remove intermediate files
-    #rm "$OUTJAPATH"
-    #rm "$OUTRJPATH"
+    rm "$OUTJAPATH"
+    rm "$OUTRJPATH"
 done
 
