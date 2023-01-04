@@ -13,7 +13,7 @@ for d in "$DLDIR"/*; do
     # get basename
     BASENAME=$(basename "$d")
     # get video path
-    INPATH="$d/$BASENAME.mp4"
+    INPATH="$d/$BASENAME.webm"
     # get subtitles paths
     SUBJAPATH="$d/$BASENAME.ja.vtt"
     SUBRJPATH="$d/$BASENAME.en-GB--125blav4xII.vtt"
@@ -22,9 +22,9 @@ for d in "$DLDIR"/*; do
     SUBRJPATH=${SUBRJPATH//,/\\,} # escape commas
     SUBENPATH=${SUBENPATH//,/\\,} # escape commas
     # paste subtitles
-    OUTJAPATH="$SUBDIR/$BASENAME-ja.mp4"
-    OUTRJPATH="$SUBDIR/$BASENAME-rj.mp4"
-    OUTPATH="$SUBDIR/$BASENAME.mp4"
+    OUTJAPATH="$SUBDIR/$BASENAME-ja.webm"
+    OUTRJPATH="$SUBDIR/$BASENAME-rj.webm"
+    OUTPATH="$SUBDIR/$BASENAME.webm"
     ffmpeg  -y -i "$INPATH"    -vf "subtitles=$SUBJAPATH:force_style='Fontsize=$FONTSIZE,Alignment=6, OutlineColour=&H80000000,BorderStyle=4,BackColour=&H80000000,Outline=0,Shadow=0" "$OUTJAPATH" 
     ffmpeg  -y -i "$OUTJAPATH" -vf "subtitles=$SUBRJPATH:force_style='Fontsize=$FONTSIZE,Alignment=10,OutlineColour=&H80000000,BorderStyle=4,BackColour=&H80000000,Outline=0,Shadow=0" "$OUTRJPATH" 
     ffmpeg  -y -i "$OUTRJPATH" -vf "subtitles=$SUBENPATH:force_style='Fontsize=$FONTSIZE,Alignment=2, OutlineColour=&H80000000,BorderStyle=4,BackColour=&H80000000,Outline=0,Shadow=0" "$OUTPATH" 
