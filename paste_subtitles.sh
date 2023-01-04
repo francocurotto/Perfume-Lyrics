@@ -16,7 +16,7 @@ for d in "$DLDIR"/*; do
     INPATH="$d/$BASENAME.mp4"
     # get subtitles paths
     SUBJAPATH="$d/$BASENAME.ja.vtt"
-    SUBRJPATH="$d/$BASENAME.en-GB.vtt"
+    SUBRJPATH="$d/$BASENAME.en-GB--125blav4xII.vtt"
     SUBENPATH="$d/$BASENAME.en.vtt"
     SUBJAPATH=${SUBJAPATH//,/\\,} # escape commas
     SUBRJPATH=${SUBRJPATH//,/\\,} # escape commas

@@ -9,7 +9,7 @@ for d in "$DLDIR"/*; do
     BASENAME=$(basename "$d")
     # get subtitles paths
     SUBJAPATH="$d/$BASENAME.ja.vtt"
-    SUBRJPATH="$d/$BASENAME.en-GB.vtt"
+    SUBRJPATH="$d/$BASENAME.en-GB-125blav4xII.vtt"
     SUBENPATH="$d/$BASENAME.en.vtt"
     ### clean japanese subtitles
     # replace punctuation for proper line wrap
