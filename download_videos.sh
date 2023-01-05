@@ -10,7 +10,7 @@ while read -r line; do
     url=${linearr[0]}
     # get title
     echo "Getting title for $url"
-    TITLE=$(youtube-dl --get-title $url)
+    TITLE=$(yt-dlp --get-title $url)
     # create folder
     DLDIR="downloaded/$TITLE"
     # check if folder exists

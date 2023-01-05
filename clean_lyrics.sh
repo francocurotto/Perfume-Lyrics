@@ -17,7 +17,13 @@ for d in "$DLDIR"/*; do
     sed -i "s/。/. /g" "$SUBJAPATH"
     sed -i "s/、/, /g" "$SUBJAPATH"
     sed -i "s/！/! /g" "$SUBJAPATH"
+
+    ### clean romaji subtitles
+    sed -i "s/’/'/g" "$SUBRJPATH"
+    
     ### clean english subtitles
+    # replace punctuation for proper ascii character
+    sed -i "s/’/'/g" "$SUBENPATH"
     # remove non-ascii character from english
     perl -i -ne 'print if m{^[[:ascii:]]+$}' "$SUBENPATH"
     echo "done"
