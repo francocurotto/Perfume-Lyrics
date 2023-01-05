@@ -7,6 +7,7 @@ DLDIR="downloaded"
 for d in "$DLDIR"/*; do
     # get basename
     BASENAME=$(basename "$d")
+    echo -n "Cleanning $BASENAME..."
     # get subtitles paths
     SUBJAPATH="$d/$BASENAME.ja.vtt"
     SUBRJPATH="$d/$BASENAME.en-GB-125blav4xII.vtt"
@@ -19,4 +20,5 @@ for d in "$DLDIR"/*; do
     ### clean english subtitles
     # remove non-ascii character from english
     perl -i -ne 'print if m{^[[:ascii:]]+$}' "$SUBENPATH"
+    echo "done"
 done
